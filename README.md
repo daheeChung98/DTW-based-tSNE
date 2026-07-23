@@ -11,9 +11,7 @@ For nearby datapoints $x_i$ and $x_j$, $p_{j|i}$ is relatively high, whereas for
 
 Mathematically, the conditonal probability $p_{j|i}$ is given by
 
-<div align="center">
-$$P_{j|i} = \frac{exp(-\|x_i-x_j\|^2/2\sigma_i^2)}{\sum_{k \ne i} exp(-\|x_i-x_k\|^2/2\sigma_i^2)}$$,
-</div>
+$$ P_{j|i} = \frac{exp(-\|x_i-x_j\|^2/2\sigma_i^2)}{\sum_{k \ne i} exp(-\|x_i-x_k\|^2/2\sigma_i^2)} $$,
 
 where $\sigma_i$ is the variance of the Gaussian that is centered on datapoint $x_i$.
 
