@@ -19,7 +19,7 @@ where $\sigma_i$ is the variance of the Gaussian that is centered on datapoint $
 
 For the low-dimensional counterparts $y_i$ and $y_j$ of the which we denote by $q_{j|i}. Hence, we model the similarity of map point $y_j$ to map point $y_i$ by
 
-$$q_{j|i} = \frac{exp(-\|y_i-y_j\|^2)}{\sum_{k \ne i} exp(-\|y_i-y_k\|^2)}$$.
+$$q_{j|i} = \frac{exp(-\|y_i-y_j\|^2)}{\sum_{k \ne i} exp(-\|y_i-y_k\|^2)}$$
 
 Since we are only interested in modeling pairwise similarities, we set $p_{i|i}=q_{i|i}=0$.
 
@@ -27,6 +27,6 @@ If the map points $y_i$ and $y_j$ correctly model the similarity between the hig
 
 SNE minimizes the sum of Kullback-Leibler divergences over all datapoints using a gradient descent method. The cost function $C$ is given by
 
-$$C = \sum\limits_i KL(P_i\|Q_i)=\sum\limits_i\sum\limits_jp_{j|i}\log\frac{p_{j|i}}{q_{j|i}}$$,
+$$C = \sum\limits_i KL(P_i\|Q_i)=\sum\limits_i\sum\limits_jp_{j|i}\log\frac{p_{j|i}}{q_{j|i}}$$
 
 in which $P_i$ represents the conditional probability distribution over all other datapoints given datapoint $x_i$, and $Q_i$ represents the conditioanl probability distribution over all other map points given map point $y_i$.
