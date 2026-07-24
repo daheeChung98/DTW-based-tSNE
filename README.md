@@ -33,4 +33,16 @@ in which $P_i$ represents the conditional probability distribution over all othe
 
 ### Perplexity
 
-The variance $\sigma_i$ of the Gaussian that is optimal for all datapoints in the data set because the density of the data is likely to vary. In dense regoins, a smaller value of $\sigma_i$ is usually more appropriate than in sparser regions. This distribution has an entropy which increases as $\sigma_i$ increases. 
+The variance $\sigma_i$ of the Gaussian that is optimal for all datapoints in the data set because the density of the data is likely to vary. In dense regoins, a smaller value of $\sigma_i$ is usually more appropriate than in sparser regions. This distribution has an entropy which increases as $\sigma_i$ increases.
+
+SNE performs a binary search for the value of $\sigma_i$ that produces a $P_i$ with a fixed perplexity that is specified by the user. The perplexity increases monotonically with the variance $\sigma_i$.
+
+$$
+Perp(P_i)=2^{H(P_i)}
+$$
+
+where $H(P_i)$ is the Shannon entropy of $P_i$ measured in bits
+
+$$
+H(P_i)=-\sum\limits_j p_{j|i}\log_2 p_{ji}
+$$
