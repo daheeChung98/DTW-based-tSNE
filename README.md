@@ -44,5 +44,5 @@ $$
 where $H(P_i)$ is the Shannon entropy of $P_i$ measured in bits
 
 $$
-H(P_i)=-\sum\limits_j p_{j|i}\log_2 p_{ji}
+H(P_i)=-\sum\limits_j p_{j|i}\log_2 p_{j|i}
 $$
