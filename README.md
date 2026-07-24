@@ -61,7 +61,7 @@ t-SNE employs a heavy-tailed distribution in the low-dimensional space to allevi
 Using this distribution, the joint probabilities $q_{ij}$ are defined as
 
 $$
-q_{ij}=\frac{(1+\|y_i-y_j\|^2)^{-1}}{\sum\limits{k \neq l} (1+\|y_k-y_l\|^2)^{-1}}
+q_{ij}=\frac{(1+\|y_i-y_j\|^2)^{-1}}{\sum\limits_{k \neq l} (1+\|y_k-y_l\|^2)^{-1}}
 $$
 
 ### Crowding Problem
