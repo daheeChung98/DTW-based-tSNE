@@ -51,4 +51,30 @@ The perplexity can be interpreted as a smooth measure of the effective number of
 
 ### t-Distributed Stochastic Neighbor Embedding (t-SNE)
 
-Although SNE constructs reasonably good visualizations
+Although SNE constructs reasonably good visualizations, it is hampered by a cost function that is difficult to optimize and by a problem we refer to as the "crowding problem". In this paper, authors presented a new technique called "t-Distributes Stochastic Neighbor Embedding (t-SNE)" that aims to alleviate these problems. The cost function used by t-SNE differs from the one used by SNE in two ways:
+
+- It uses a symmetrized version of the SNE cost function with simpler gradients that was briefly introduced by Cook et al. (2007)
+- It uses a Student-t distribution rather than a Gaussian to compute the similarity between two points in the low-dimensional space.
+
+t-SNE employs a heavy-tailed distribution in the low-dimensional space to alleviate both the crowding problem and the optimization problems to SNE.
+
+Using this distribution, the joint probabilities $q_{ij}$ are defined as
+
+$$
+q_{ij}=\frac{(1+\|y_i-y_j\|^2)^{-1}}{\sum\limits{k \neq l} (1+\|y_k-y_l\|^2)^{-1}}
+$$
+
+### Crowding Problem
+
+In the original high-dimensional space, SNE models local neighborhood relationships as probabilities using a Gaussian kernel.
+
+However, when a Gaussian kernel is also used in the low-dimensional embedding space, its thin-tailed distribution causes the similarity between distant points to decrease very rapidly toward zero.
+
+As a result, the low-dimensional space cannot accommodate all pairwise relationships while preserving the original distances. Consequently, points that should remain relatively far apart are forced to crowd together near the center of the embedding. This phenomenon is known as the crowding problem.
+
+To address this issue, t-SNE replaces the Gaussian distribution in the low-dimensional space with a Student's t-distribution (with one degree of freedom).
+
+Because the Student's t-distribution has much heavier tails, the similarity between distant points decreases more gradually rather than collapsing to zero. This allows dissimilar points to remain farther apart in the embedding space.
+
+Consequently, t-SNE produces a more spread-out embedding that better preserves the neighborhood structure of the original high-dimensional data while also maintaining the global arrangement more effectively than SNE.
+
