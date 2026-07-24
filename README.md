@@ -46,3 +46,9 @@ where $H(P_i)$ is the Shannon entropy of $P_i$ measured in bits
 $$
 H(P_i)=-\sum\limits_j p_{j|i}\log_2 p_{j|i}
 $$
+
+The perplexity can be interpreted as a smooth measure of the effective number of neighbors. The performance of SNE is fairly robust to changes in the perplexity, and typical values are between 5 and 50.
+
+### t-Distributed Stochastic Neighbor Embedding (t-SNE)
+
+Although SNE constructs reasonably good visualizations
