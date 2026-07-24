@@ -30,3 +30,7 @@ SNE minimizes the sum of Kullback-Leibler divergences over all datapoints using 
 $$C = \sum\limits_i KL(P_i\|Q_i)=\sum\limits_i\sum\limits_jp_{j|i}\log\frac{p_{j|i}}{q_{j|i}}$$
 
 in which $P_i$ represents the conditional probability distribution over all other datapoints given datapoint $x_i$, and $Q_i$ represents the conditioanl probability distribution over all other map points given map point $y_i$.
+
+### Perplexity
+
+The variance $\sigma_i$ of the Gaussian that is optimal for all datapoints in the data set because the density of the data is likely to vary. In dense regoins, a smaller value of $\sigma_i$ is usually more appropriate than in sparser regions. This distribution has an entropy which increases as $\sigma_i$ increases. 
