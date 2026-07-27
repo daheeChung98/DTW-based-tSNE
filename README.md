@@ -80,7 +80,7 @@ $$
 
 ---
 
-## Similarity Probability
+## Similarity Measure
 
 t-SNE first computes pairwise Euclidean distances in the high-dimensional space, converts those distances into neighborhood probabilities using a Gaussian kernel, and then learns a low-dimensional embedding whose Student's t-distribution–based similarities closely match the original probability distribution by minimizing the KL divergence.
 
@@ -101,3 +101,30 @@ A trajectory is fundamentally different from a static data point. It is a sequen
 If Euclidean distance is no longer appropriate, what similarity measure should be used instead?
 
 Answering this question became the starting point of our research.
+
+### Euclidean Distance
+
+### Fréchet Distance
+
+### Dynamic Time Warping (DTW)
+
+Dynamic Time Warping (DTW) is a similarity measure designed for sequential or trajectory data. 
+Unlike Euclidean distance, which compares observations at the same time index, 
+DTW allows the time axis to be stretched or compressed so that similar patterns occurring at different speeds can still be aligned.
+
+This makes DTW particularly useful when two trajectories have similar shapes but differ in timing or sampling frequency.
+
+**Algorithm**
+
+1. Compute the pairwise distance matrix between two trajectories.
+2. Initialize the first row and first column of the cumulative cost matrix.
+3. For each remaining cell, add the current distance to the minimum cumulative cost from the left, upper, or diagonal neighbor.
+4. Continue until reaching the bottom-right corner of the matrix.
+5. The cumulative cost at the final cell is the DTW distance, and the optimal alignment can be obtained by backtracking through the minimum-cost path.
+
+Simply put, each cell can be filled with
+```
+$$
+D(i, j)
+$$
+```
