@@ -17,7 +17,7 @@ $$
 
 where $\sigma_i$ is the variance of the Gaussian that is centered on datapoint $x_i$.
 
-For the low-dimensional counterparts $y_i$ and $y_j$ of the which we denote by $q_{j|i}. Hence, we model the similarity of map point $y_j$ to map point $y_i$ by
+For the low-dimensional counterparts $y_i$ and $y_j$ of the which we denote by $q_{j|i}$. Hence, we model the similarity of map point $y_j$ to map point $y_i$ by
 
 $$q_{j|i} = \frac{exp(-\|y_i-y_j\|^2)}{\sum_{k \ne i} exp(-\|y_i-y_k\|^2)}$$
 
