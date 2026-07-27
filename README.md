@@ -94,7 +94,7 @@ t-SNE first computes pairwise Euclidean distances in the high-dimensional space,
 
 However, we soon encountered a fundamental limitation.
 
-All of these probability distributions $p_{ij}$ are built upon pairwise Euclidean distances ($\x_i - x_j|\|^2$). This works well when each observation is represented as a static feature vector. But what if each observation is a trajectory?
+All of these probability distributions $p_{ij}$ are built upon pairwise Euclidean distances ($\|x_i - x_j|\|^2$). This works well when each observation is represented as a static feature vector. But what if each observation is a trajectory?
 
 A trajectory is fundamentally different from a static data point. It is a sequence that evolves over time, and therefore its similarity cannot always be captured by pointwise Euclidean distance. Two trajectories may describe nearly identical motion patterns while appearing far apart under Euclidean distance because of temporal misalignment. This led us to a fundamental question:
 
