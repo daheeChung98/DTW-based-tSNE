@@ -126,3 +126,9 @@ Simply put, each cell can be filled with
 ```
 D(i, j) = d(i, j) + min{D(i-1, j), D(i, j-1), D(i-1, j-1)}
 ```
+
+### Multidimensional DTW
+
+**Independent DTW**
+
+**Dependent DTW**
