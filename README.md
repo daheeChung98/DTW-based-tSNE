@@ -1,6 +1,20 @@
 # DTW-based-tSNE
 High-dimensional trajectory data visualization with DTW based t-SNE
 
+---
+
+Conventional t-SNE computes pairwise similarities using **Euclidean distance**, which assumes that each sample is represented as a fixed-length vector.
+
+For trajectory data, however, Euclidean distance often fails to capture temporal similarity because trajectories may differ in speed, timing, or length.
+
+To address this limitation, this repository replaces Euclidean distance with **multidimensional Dynamic Time Warping (mDTW)** while preserving the original optimization procedure of t-SNE.
+
+The only modification is the way pairwise similarities are computed in the high-dimensional space.
+
+See DTW_code.R for multidimensional DTW implementation
+See DTW_based_tSNE.R for DTW based t-SNE Algorithm 
+
+---
 ## t-SNE
 
 ### Stochastic Neighbor Embedding
