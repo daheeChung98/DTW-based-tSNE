@@ -137,6 +137,47 @@ Shokoohi-Yekta et al. (2017) proposed two extensions of Dynamic Time Warping for
 
 The choice between these methods depends on whether the variables should be aligned **independently** or **jointly**.
 
+A multivariate trajectory consists of **p variables** observed over **l time points**.
+
+For the *i*-th trajectory,
+
+$$
+\mathbf X_i \in \mathbb R^{p \times l}
+$$
+
+where
+
+- **p** : number of variables (dimensions)
+- **l** : number of time points
+
+Each variable is represented as
+
+$$
+X_{iq} =
+[x_{iq}(t_1),x_{iq}(t_2),...,x_{iq}(t_l)].
+$$
+
+For example,
+
+- gait analysis → joint angles
+- GPS trajectory → latitude & longitude
+- wearable sensors → multiple sensor signals
+
+Dynamic Time Warping compares two trajectories by constructing a **cost matrix**.
+
+Each element
+
+$$
+C(k,l)
+$$
+
+represents the distance between two observations at time
+$t_k$ and $t_l$.
+
+The cumulative cost matrix is computed recursively using dynamic programming.
+
+The optimal warping path is then obtained by minimizing the cumulative cost from the upper-left corner to the lower-right corner.
+
 **Independent DTW**
 
 DTW-I assumes that each variable is **independent**.
