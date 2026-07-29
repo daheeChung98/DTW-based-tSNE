@@ -128,7 +128,7 @@ D(i, j) = d(i, j) + min{D(i-1, j), D(i, j-1), D(i-1, j-1)}
 ```
 
 ### Multidimensional DTW
-
+Let a trajectory data set as $\mathbf{X} = {\mathbf{X}_1}$
 **Independent DTW**
 
 **Dependent DTW**
