@@ -128,7 +128,42 @@ D(i, j) = d(i, j) + min{D(i-1, j), D(i, j-1), D(i-1, j-1)}
 ```
 
 ### Multidimensional DTW
-Let a trajectory data set as $\mathbf{X} =\left{\mathbf{X}_1,\mathbf{X}_2,\dots,\mathbf{X}_n\right}$, where $\mathbf{X}_i = \{\}$
+Trajectory data often consist of multiple variables observed over time (e.g., x-y coordinates, gait joints, sensor measurements).
+
+Shokoohi-Yekta et al. (2017) proposed two extensions of Dynamic Time Warping for multivariate trajectories:
+
+- **Independent DTW (DTW-I)**
+- **Dependent DTW (DTW-D)**
+
+The choice between these methods depends on whether the variables should be aligned **independently** or **jointly**.
+
 **Independent DTW**
 
+DTW-I assumes that each variable is **independent**.
+
+The DTW distance is computed separately for every dimension and then summed:
+
+$$
+DTW_I(\mathbf X_i,\mathbf X_j) =
+\sum_{q=1}^{p}
+DTW(X_{iq},X_{jq})
+$$
+
+where
+
+- $p$ : number of variables
+- $DTW(\cdot,\cdot)$ : standard univariate Dynamic Time Warping
+
 **Dependent DTW**
+
+DTW-D assumes that all variables are **dependent** and should be aligned simultaneously.
+
+Instead of computing DTW for each variable independently, the local cost is computed using all variables at once:
+
+$$
+d(k,l) =
+\sum_{q=1}^{p}
+(X_{iq}(t_k)-X_{jq}(t_l))^2
+$$
+
+The cumulative cost matrix is then optimized using the standard DTW dynamic programming algorithm.
