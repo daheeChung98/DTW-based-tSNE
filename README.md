@@ -12,6 +12,7 @@ To address this limitation, this repository replaces Euclidean distance with **m
 The only modification is the way pairwise similarities are computed in the high-dimensional space.
 
 See DTW_code.R for multidimensional DTW implementation
+
 See DTW_based_tSNE.R for DTW based t-SNE Algorithm 
 
 ---
