@@ -3,7 +3,7 @@ High-dimensional trajectory data visualization with DTW based t-SNE
 
 Enhanced trajectory data visualization: a dynamic time warping integrated t-SNE approach with real-data applications
 
-Dahee Chung et al. (2024)
+Dahee Chung et al. (2024) | Communication in Statistics - Simulation and Computaion
 
 **Abstract**
 
