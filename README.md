@@ -1,6 +1,14 @@
 # DTW-based-tSNE
 High-dimensional trajectory data visualization with DTW based t-SNE
 
+Enhanced trajectory data visualization: a dynamic time warping integrated t-SNE approach with real-data applications
+
+Dahee Chung et al. (2024)
+
+**Abstract**
+
+In this study, we focus on visualizing trajectory data, a type of data based on a series of temporal observations. We present an adapted version of t-distributed stochastic neighborhood embedding (t-SNE) tailored for trajectory data. This method is designed to preserve the inherent curved structure of trajectory data by incorporating a robust distance measure. Furthermore, it demonstrates the ability to maintain the data structure even in the presence of missing values at different time points. The performance of the proposed method is rigorously evaluated through a simulation study and demonstrated its effectiveness in visualizing two types of trajectory data, Gait data and NBA data.
+
 ---
 
 Conventional t-SNE computes pairwise similarities using **Euclidean distance**, which assumes that each sample is represented as a fixed-length vector.
